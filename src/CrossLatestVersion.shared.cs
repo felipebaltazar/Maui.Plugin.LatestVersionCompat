@@ -17,8 +17,12 @@ namespace Plugin.LatestVersion
         {
 #if NETSTANDARD1_1
             return null;
-#else
+#elif ANDROID
             return new LatestVersionImplementation();
+#elif IOS
+            return new LatestVersionImplementation();
+#else
+            return null;
 #endif
         }
 

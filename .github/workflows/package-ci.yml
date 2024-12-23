@@ -52,5 +52,5 @@ jobs:
       run: dotnet nuget push **\*.nupkg --api-key ${{ secrets.PACKAGEGH_TOKEN }} -s https://nuget.pkg.github.com/felipe.baltazar/index.json --skip-duplicate
         
     - name: Publish to Nuget.org
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'
       run: dotnet nuget push **\*.nupkg --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
